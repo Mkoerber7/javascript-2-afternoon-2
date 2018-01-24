@@ -17,7 +17,9 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
+function first(arr){
+  return arr[0];
+}
 
 
 
@@ -32,7 +34,9 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
+function last(arr){
+  return arr[2];
+}
 
 
 
@@ -47,7 +51,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
+function looper(family){
+  for(let i=0;i<family.length;i++){
+    alert(family[i], i);
+  }
+}
 
 
 
@@ -62,7 +70,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop through the given array backwards alerting every item in the array starting at the end.\
 */
 
-//Code Here
+function reversedLooper(letters){
+  for(let i=letters.length-1;i>=0;i--){
+    alert(letters[i], i);
+  }
+}
 
 
 
@@ -77,7 +89,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return only the even numbers from the array.
 */
 
-//Code Here
+function evenFinder(nums){
+  let evenNums = [];
+  for(let i=0;i<nums.length;i++){
+    if(nums[i]%2===0){
+      evenNums.push(nums[i]);
+    }
+  }
+  return evenNums;
+}
 
 
 
@@ -94,9 +114,17 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
-
-
+function divider(numbersArray){
+  var result = [[],[]];
+  for (var i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 === 0) {
+    result[0].push(numbersArray[i]);
+    } else {
+    result[1].push(numbersArray[i]);
+    }
+  }
+	return result;
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -115,7 +143,13 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(arr){
+  var number = getRandomArbitrary();
+  if (arr.indexOf(number) !== -1){
+    return true;
+  }
+  return false;
+  }
 
 
 
@@ -142,8 +176,20 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 */
 
-//Code Here
+function removeItem(myGroceryList,item){
+  for(var i = 0; i < myGroceryList.length; i++) {
+    if(myGroceryList[i] === item) {
+      myGroceryList.splice(i, 1);
+      i--;
+    }
+  }
+  return myGroceryList;
+}
 
+function addItem(myGroceryList, item) {
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -152,8 +198,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
-
+function maker(){
+  let array = [];
+  for(let i=1;i<216;i++){
+    array.push(i);
+  }
+  return(array);
+}
 
 
 ////////// PROBLEM 10 //////////
